@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# だからニュー速でやるお！
 module Yaruo
   module Aa
     class Yaruo01 < ::Yaruo::Aa::Base
