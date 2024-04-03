@@ -1,6 +1,6 @@
 # Yaruo
 
-A Cli program that print random Ascii Art
+A CLI program that print random Ascii Art
 
 ## Requirement
 
