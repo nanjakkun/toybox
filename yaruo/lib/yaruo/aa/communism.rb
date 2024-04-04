@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# タイトル
+# 共産主義
 module Yaruo
   module Aa
     class Communism < ::Yaruo::Aa::Base
