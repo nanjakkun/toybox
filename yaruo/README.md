@@ -28,3 +28,7 @@ gem install specific_install
 
 gem specific_install https://github.com/nanjakkun/toybox -d yaruo
 ```
+
+## Create New File from template
+
+bundle exec exe/yaruo gen %file_name%
