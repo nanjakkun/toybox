@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@ruby/3.3-wasm-wasi@2.6.1/dist/browser.script.iife.js"></script>
+</head>
+<body>
+  <h1>ERB example running with ruby-wasm</h1>
+  <div>
+    <textarea id="template_area">Value of x is: &lt;%= x %&gt;</textarea>
+  </div>
+  <div>
+    <input id="value_input" type="text" value="100" />
+  </div>
+  <div>
+    <button id="render_button" type="button">render</button>
+  </div>
+  <div>
+    <textarea id="output_area"></textarea>
+  </div>
+  <script type="text/ruby">
+    require "js"
+    require "erb"
+
+    body = JS.global[:document][:body]
+    template_area = JS.global[:document].getElementById("template_area")
+    value_input = JS.global[:document].getElementById("value_input")
+    render_button = JS.global[:document].getElementById("render_button")
+    output_area = JS.global[:document].getElementById("output_area")
+
+    render_button.addEventListener("click") do |event|
+      template_str = template_area[:value].to_s
+      x = value_input[:value].to_s
+      template = ERB.new(template_str)
+      res = template.result(binding)
+
+      output_area[:innerText] = res
+    end
+  </script>
+</body>
+</html>
